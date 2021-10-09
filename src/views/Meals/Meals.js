@@ -10,8 +10,10 @@ const Meals = () => {
 
     useEffect(() => {
         axios("https://www.themealdb.com/api/json/v2/1/randomselection.php")
-            .then(({data}) => setMeals(data.meals))
-        setIsLoading(false)
+            .then(({data}) => {
+                setMeals(data.meals)
+                setIsLoading(false)
+            })
     }, [])
 
     if (isLoading) return <Spinner/>

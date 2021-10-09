@@ -18,8 +18,8 @@ const Browse = () => {
                 } else {
                     setError("Такого блюда нет")
                 }
+                setIsLoading(false)
             })
-        setIsLoading(false)
     }, [params.name])
     if (isLoading) return <Spinner/>
     return (
